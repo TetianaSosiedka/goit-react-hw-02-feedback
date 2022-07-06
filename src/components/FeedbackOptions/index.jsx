@@ -1,6 +1,8 @@
+import PropTyprs from 'prop-types';
+
 import { Button } from './styled';
 
-export const Buttons = ({ onCountFedback, buttonsName }) => {
+export const FeedbackOptions = ({ onLeaveFeedback, buttonsName }) => {
   return (
     <div>
       {buttonsName.map(buttonName => {
@@ -9,7 +11,7 @@ export const Buttons = ({ onCountFedback, buttonsName }) => {
             type="button"
             data-name={buttonName}
             key={buttonName}
-            onClick={onCountFedback}
+            onClick={onLeaveFeedback}
           >
             {buttonName}
           </Button>
@@ -17,4 +19,8 @@ export const Buttons = ({ onCountFedback, buttonsName }) => {
       })}
     </div>
   );
+};
+FeedbackOptions.prototype = {
+  buttonsName: PropTyprs.arrayOf.isRequired,
+  onLeaveFeedback: PropTyprs.func.isRequired,
 };

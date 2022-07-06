@@ -2,7 +2,7 @@ import { Component } from 'react';
 
 import { Container } from './App.styled';
 
-import { Buttons } from '../Buttons';
+import { FeedbackOptions } from '../FeedbackOptions';
 import { Statistics } from '../Statistics';
 
 const buttons = ['good', 'neutral', 'bad'];
@@ -46,8 +46,10 @@ export class App extends Component {
     return (
       <Container>
         <h2>Please leave feedback</h2>
-        <Buttons onCountFedback={handleCountFedback} buttonsName={buttons} />
-        {/* <FeedbackOptions options={} onLeaveFeedback={}/> */}
+        <FeedbackOptions
+          onLeaveFeedback={handleCountFedback}
+          buttonsName={buttons}
+        />
         <h3>Statistics</h3>
         <Statistics
           good={good}
