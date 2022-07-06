@@ -1,5 +1,7 @@
 import PropTyprs from 'prop-types';
 
+import { Resalt } from './styled';
+
 export const Statistics = ({
   good,
   neutral,
@@ -12,8 +14,8 @@ export const Statistics = ({
       <p>Good: {good}</p>
       <p>Neutral: {neutral}</p>
       <p>Bad: {bad}</p>
-      <p>Total: {total()}</p>
-      <p>Positive feedback: {positivePercentage()}%</p>
+      <Resalt>Total: {total()}</Resalt>
+      <Resalt>Positive feedback: {positivePercentage()}%</Resalt>
     </div>
   );
 };
