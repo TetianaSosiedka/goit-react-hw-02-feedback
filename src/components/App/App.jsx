@@ -3,6 +3,8 @@ import { Component } from 'react';
 import { Container } from './App.styled';
 
 import { FeedbackOptions } from '../FeedbackOptions';
+import { Notification } from '../Notification';
+import { Section } from '../Section';
 import { Statistics } from '../Statistics';
 
 const buttons = ['good', 'neutral', 'bad'];
@@ -45,19 +47,26 @@ export class App extends Component {
 
     return (
       <Container>
-        <h2>Please leave feedback</h2>
-        <FeedbackOptions
-          onLeaveFeedback={handleCountFedback}
-          buttonsName={buttons}
-        />
-        <h3>Statistics</h3>
-        <Statistics
-          good={good}
-          neutral={neutral}
-          bad={bad}
-          total={total}
-          positivePercentage={positivePercentage}
-        />
+        <Section title="Please leave feedback">
+          <FeedbackOptions
+            onLeaveFeedback={handleCountFedback}
+            buttonsName={buttons}
+          />
+        </Section>
+
+        {total() === 0 ? (
+          <Notification message="There is no feedback"></Notification>
+        ) : (
+          <Section title="Statistics">
+            <Statistics
+              good={good}
+              neutral={neutral}
+              bad={bad}
+              total={total}
+              positivePercentage={positivePercentage}
+            />
+          </Section>
+        )}
       </Container>
     );
   }
