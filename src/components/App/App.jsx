@@ -18,15 +18,8 @@ export class App extends Component {
 
   handleCountFedback = ({ target }) => {
     const stateName = target.dataset.name;
-    if (stateName === 'good') {
-      this.setState(prevState => ({ good: prevState.good + 1 }));
-    }
-    if (stateName === 'neutral') {
-      this.setState(prevState => ({ neutral: prevState.neutral + 1 }));
-    }
-    if (stateName === 'bad') {
-      this.setState(prevState => ({ bad: prevState.bad + 1 }));
-    }
+
+    this.setState(prevState => ({ [stateName]: prevState[stateName] + 1 }));
   };
 
   countTotalFeedback = () => {
