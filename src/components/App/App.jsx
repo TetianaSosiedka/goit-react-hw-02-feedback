@@ -7,8 +7,6 @@ import { Notification } from '../Notification';
 import { Section } from '../Section';
 import { Statistics } from '../Statistics';
 
-const buttons = ['good', 'neutral', 'bad'];
-
 export class App extends Component {
   state = {
     good: 0,
@@ -43,7 +41,7 @@ export class App extends Component {
         <Section title="Please leave feedback">
           <FeedbackOptions
             onLeaveFeedback={handleCountFedback}
-            buttonsName={buttons}
+            buttonsName={Object.keys(this.state)}
           />
         </Section>
 
