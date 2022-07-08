@@ -1,4 +1,4 @@
-import PropTyprs from 'prop-types';
+import PropTypes from 'prop-types';
 
 import { Button } from './styled';
 
@@ -21,6 +21,6 @@ export const FeedbackOptions = ({ onLeaveFeedback, buttonsName }) => {
   );
 };
 FeedbackOptions.prototype = {
-  buttonsName: PropTyprs.arrayOf.isRequired,
-  onLeaveFeedback: PropTyprs.func.isRequired,
+  buttonsName: PropTypes.arrayOf.isRequired,
+  onLeaveFeedback: PropTypes.func.isRequired,
 };

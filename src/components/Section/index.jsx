@@ -1,4 +1,4 @@
-import PropTyprs from 'prop-types';
+import PropTypes from 'prop-types';
 
 export const Section = ({ title, children }) => {
   return (
@@ -10,6 +10,6 @@ export const Section = ({ title, children }) => {
 };
 
 Section.prototype = {
-  title: PropTyprs.string.isRequired,
-  children: PropTyprs.func.isRequired,
+  title: PropTypes.string.isRequired,
+  children: PropTypes.func.isRequired,
 };

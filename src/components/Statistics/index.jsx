@@ -1,4 +1,4 @@
-import PropTyprs from 'prop-types';
+import PropTypes from 'prop-types';
 
 import { Resalt } from './styled';
 
@@ -21,9 +21,9 @@ export const Statistics = ({
 };
 
 Statistics.prototype = {
-  good: PropTyprs.number.isRequired,
-  neutral: PropTyprs.number.isRequired,
-  bad: PropTyprs.number.isRequired,
-  total: PropTyprs.func.isRequired,
-  positivePercentage: PropTyprs.func.isRequired,
+  good: PropTypes.number.isRequired,
+  neutral: PropTypes.number.isRequired,
+  bad: PropTypes.number.isRequired,
+  total: PropTypes.func.isRequired,
+  positivePercentage: PropTypes.func.isRequired,
 };
